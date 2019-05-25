@@ -22,20 +22,20 @@ function createTree(container, data) {
 }
 
 function drowTree(obj) {
-  if (JSON.stringify(obj) !== "{}"){
+  if (Object.keys(obj).length !== "{}"){
       
-    const ul = document.createElement('ul');
+    const list = document.createElement('ul');
     
       Object.keys(obj).forEach((i) => {
-        let li = document.createElement('li');
-        li.innerText = i;
+        let listItems = document.createElement('li');
+        listItems.innerText = i;
         let childrenUl = drowTree(obj[i]);
         if (childrenUl) {
-            li.appendChild(childrenUl);
+          listItems.appendChild(childrenUl);
         }
-        ul.appendChild(li);
+        list.appendChild(listItems);
     });
-    return ul;
+    return list;
   }
 }
 
