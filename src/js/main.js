@@ -22,7 +22,7 @@ function createTree(container, data) {
 }
 
 function drowTree(obj) {
-  if (Object.keys(obj).length !== "{}"){
+  if (Object.keys(obj).length !== 0){
       
     const list = document.createElement('ul');
     
